@@ -1,0 +1,22 @@
+#
+# Please modify KERNELPATH, KERNELARCH and TOOLPREFIX to meet your environment
+#
+
+# MIPS-PB92 example ###########################################################################################################
+export KERNELPATH=/home/maj/openwrt_hlk/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14
+export KERNELARCH=mips
+export TOOLPREFIX=/home/maj/openwrt_hlk/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-
+
+# Use local libnl library or not
+export BUILD_LIBNL=y
+export INCLUDE_LIBNL11_HEADER=${ATH_TOPDIR}/apps/libnl-1/include
+export INCLUDE_LIBNL11_LIB=-lm ${ATH_TOPDIR}/apps/libnl-1/lib/libnl.a 
+
+export TOOLCHAIN=/home/maj/openwrt_hlk/staging_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/usr/bin
+export PATH:=${TOOLCHAIN}:${PATH}
+
+export DEF_CFG80211_INTERNAL_REGDB=y
+
+# Select Board Data.
+#export BUILD_BDATA_DB7=y
+#export BUILD_BDATA_XPA=y

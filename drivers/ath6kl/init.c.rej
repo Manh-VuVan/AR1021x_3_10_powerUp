@@ -1,0 +1,66 @@
+--- WLAN-AIO-3.10kernel-xx/drivers/ath6kl/init.c	2019-03-04 11:44:57.000000000 +0800
++++ WLAN-AIO-3.10kernel/drivers/ath6kl/init.c	2023-12-08 12:03:34.651768345 +0800
+@@ -1278,16 +1278,28 @@
+ #include "fw_ram_3_0.h"
+ #include "fw_bdata_6006_1_1.h"
+ #include "fw_ram_6006_1_1.h"
++#include "otp_3_0.h"
++#include "utf_3_0.h"
++
++
+ static int ath6kl_get_fw(struct ath6kl *ar, const char *filename,
+ 			 u8 **fw, size_t *fw_len)
+ {
+ #if 1
+       char tmpfilename[100];
++	 char utffilename[100];
++	 char otpfilename[100];
+       unsigned char tmpsp[64]; 
+-	memset(tmpsp,0,sizeof(tmpsp));
+-        memcpy(tmpsp,ath_info.serial,sizeof(ath_info.serial));
++////	memset(tmpsp,0,sizeof(tmpsp));
++//        memcpy(tmpsp,ath_info.serial,sizeof(ath_info.serial));
+ 	snprintf(tmpfilename, sizeof(tmpfilename), "%s/%s",
+ 		 ar->hw.fw.dir, ar->hw.fw.fw);
++	printk("Enter ath6kl_get_fw\n");
++	snprintf(utffilename, sizeof(utffilename), "%s/%s",ar->hw.fw.dir, ar->hw.fw.utf);
++	snprintf(otpfilename, sizeof(otpfilename), "%s/%s",ar->hw.fw.dir, ar->hw.fw.otp);
++	printk("Enter ath6kl_get_fw filename:%s tmpfilename:%s,utf:%s otp:%s.\n",filename,tmpfilename,utffilename,otpfilename);
++	
++	
+ 
+ 	if (strncmp(filename, AR6004_HW_1_3_BOARD_DATA_FILE, strlen(AR6004_HW_1_3_BOARD_DATA_FILE)) == 0) {
+ 		*fw_len = sizeof(fw_bdata);
+@@ -1304,11 +1316,16 @@
+ 		}
+ 	} else if ((strncmp(ar->hw.fw.dir, AR6004_HW_3_0_FW_DIR, strlen(AR6004_HW_3_0_FW_DIR)) == 0) &&
+ 		   (strncmp(filename, tmpfilename, strlen(tmpfilename)) == 0)) {
+-		    if(strcmp(tmpsp,tmpser)== 0){
+ 		     *fw_len = sizeof(fw_ram_3_0);
+ 		     *fw = fw_ram_3_0;
+-		  }else
+-		    ath6kl_info("\n");
++	}else if(strncmp(filename,otpfilename,strlen(otpfilename)) == 0){
++		printk("!!!!!!!!otp filename:%s,%s",filename,otpfilename);
++		*fw_len = sizeof(otp_bin);
++		*fw = otp_bin;
++		}else if (strncmp(filename,utffilename,strlen(utffilename)) == 0){
++		printk("!!!!!!!!utf filename:%s,%s",filename,utffilename);
++		*fw_len = sizeof(utf_bin);
++		*fw = utf_bin;
+ 
+ 	} else if (strncmp(filename, AR6006_HW_1_1_BOARD_DATA_FILE, strlen(AR6006_HW_1_1_BOARD_DATA_FILE)) == 0) {
+ 		printk("Load AR6006/HW1.1 board data!!!\n");	
+@@ -1323,10 +1340,10 @@
+ 		*fw_len = sizeof(fw_ram);
+ 		*fw = fw_ram;
+ 	} else {
+-		
++	i	ath6kl_err("ath6kl: Get firmware %s fail!!\n", filename);	
+ 		return -1;
+ 	}
+-
++	printk("ath6kl: Get firmware %s !!\n", filename);
+ 	return 0;
+ #else
+ #ifdef CE_SUPPORT

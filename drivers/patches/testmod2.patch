@@ -1,0 +1,12 @@
+--- /home/turbo/work/drivers/AR1021X/WLAN-AIO-KERNEL5.4.77/build/scripts/x86/Makefile.x86	2020-07-08 19:41:07.000000000 +0800
++++ WLAN-AIO-KERNEL5.4.77x/build/scripts/x86/Makefile.x86	2023-12-07 13:49:40.391382720 +0800
+@@ -3,7 +3,8 @@
+ #targetList := udev drivers drivers_firmware
+ targetList := udev drivers
+ #ifdef BUILD_LIBNL
+-#targetList += libnl
++targetList += libnl
++targetList += athtcmd
+ #endif
+ # targetList += iw wpa_supplicant rootfs_build 
+ targetList += rootfs_build 

@@ -1,0 +1,25 @@
+--- /home/turbo/work/drivers/AR1021X/WLAN-AIO-KERNEL5.4.77/build/Makefile	2020-07-08 19:41:07.000000000 +0800
++++ WLAN-AIO-KERNEL5.4.77x/build/Makefile	2023-12-07 13:48:04.688518609 +0800
+@@ -24,6 +24,7 @@
+ export WPA_SUPPLICANT_TOPDIR=${ATH_TOPDIR}/apps/hostap
+ export WPA_SUPPLICANT_COMBO_TOPDIR=${ATH_TOPDIR}/apps/athr-hostap-wfd
+ export IW30_TOPDIR=${ATH_TOPDIR}/apps/iw-3.0
++export ATHTCMD=${ATH_TOPDIR}/apps/athtcmd
+ export LIBNL11_TOPDIR=${ATH_TOPDIR}/apps/libnl-1
+ export WIRELESSTOOLS_TOPDIR=${ATH_TOPDIR}/apps/wireless_tools.29
+ export ARTAGENT_TOPDIR=${ATH_TOPDIR}/apps/artagent
+@@ -128,6 +129,14 @@
+ 	@echo Clean iw-3.0
+ 	cd $(IW30_TOPDIR) && ${MAKEARCH} clean
+ 
++###athtcmd
++athtcmd:rootfs_prep 
++	@echo Build athtcmd
++	cd $(ATHTCMD) && \
++	${MAKEARCH} CC=$(TOOLPREFIX)gcc AR=$(TOOLPREFIX)ar LD=$(TOOLPREFIX)ld
++
++
++
+ #
+ # libnl build
+ #

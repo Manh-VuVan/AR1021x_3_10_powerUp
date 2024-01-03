@@ -1,0 +1,600 @@
+build udev
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../build/util/udev && \
+./compat_firmware_install
+Build drivers
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers && make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/drivers'
+Clean drivers
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- -C /home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14 SUBDIRS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat clean
+make[2]: Entering directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+  CLEAN   /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat/.tmp_versions
+  CLEAN   /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat/Module.symvers
+make[2]: Leaving directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- -C /home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14 SUBDIRS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211 clean
+make[2]: Entering directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+  CLEAN   /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/.tmp_versions
+  CLEAN   /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/Module.symvers
+make[2]: Leaving directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- -C /home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14 SUBDIRS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl clean
+make[2]: Entering directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+  CLEAN   /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/.tmp_versions
+  CLEAN   /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/Module.symvers
+make[2]: Leaving directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+Transfer defaulte bdata to C array
+Transfer /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/fw_bdata.h DONE...
+Transfer /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/fw_ram.h DONE...
+Transfer /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/fw_bdata_3_0.h DONE...
+Transfer /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/fw_ram_3_0.h DONE...
+Transfer /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/fw_bdata_6006_1_1.h DONE...
+Transfer /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/fw_ram_6006_1_1.h DONE...
+Build drivers
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- -C /home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14 SUBDIRS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat modules
+make[2]: Entering directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat/main.o
+  LD [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat/compat.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat/compat.mod.o
+  LD [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat/compat.ko
+make[2]: Leaving directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- -C /home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14 SUBDIRS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211 KBUILD_EXTRA_SYMBOLS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/compat/Module.symvers modules
+make[2]: Entering directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/core.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/sysfs.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/radiotap.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/util.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/reg.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/scan.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/nl80211.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/mlme.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/ibss.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/sme.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/chan.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/ethtool.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/mesh.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/wext-compat.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/wext-sme.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/regdb.o
+  LD [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/cfg80211.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/cfg80211.mod.o
+  LD [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/cfg80211.ko
+make[2]: Leaving directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- -C /home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14 SUBDIRS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl KBUILD_EXTRA_SYMBOLS=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/cfg80211/Module.symvers modules
+make[2]: Entering directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/debug.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/htc_pipe.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/bmi.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/cfg80211.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/cfg80211_btcoex.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/init.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/main.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/txrx.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/wmi.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/wmi_btcoex.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/usb.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/testmode.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/rttm.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/diag.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/htcoex.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/ath_netlink.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/intra_reg.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/pm.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/p2p.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/ap.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/reg.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/regdb.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/acs.o
+  CC [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/direct_audio.o
+  LD [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/ath6kl_usb.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/ath6kl_usb.mod.o
+  LD [M]  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/ath6kl/ath6kl_usb.ko
+make[2]: Leaving directory '/home/maj/Downloads/openwrt_310/build_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2/linux-ramips_mt7628/linux-3.10.14'
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/drivers'
+find /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers -name '*.ko' -exec cp '{}' /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/lib/modules ';'
+Build drivers firmware
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers && make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- firmware_install
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/drivers'
+============================================================================
+install firmware
+============================================================================
+install firmware to /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/lib/firmware/ath6k
+cp -rf /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../drivers/fw/firmware  /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/lib/firmware/ath6k
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/drivers'
+Config libnl1-1
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../apps/libnl-1 && \
+./configure --host=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- CC=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc AR=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ar LD=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ld
+checking for /home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc--gcc... /home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... yes
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc accepts -g... yes
+checking for /home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc option to accept ISO C89... none needed
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for pow in -lm... yes
+configure: creating ./config.status
+config.status: creating Makefile.opts
+config.status: creating libnl-1.pc
+config.status: creating doc/Doxyfile
+config.status: creating lib/defs.h
+config.status: lib/defs.h is unchanged
+
+----------------------------------------------------------------------
+SUMMARY:
+
+Included in Compilation:
+  libnl:   Yes  -lm
+
+Dependencies:
+  libm             Yes       (required)
+Clean libnl1-1
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../apps/libnl-1 && make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- clean
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/libnl-1'
+rm -f cscope.*
+Entering lib
+  CLEAN lib
+Entering include
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/libnl-1'
+Build libnl1-1
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../apps/libnl-1 && \
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/libnl-1'
+Entering lib
+  DEP netfilter/ct.c
+  DEP netfilter/log_obj.c
+  DEP netfilter/ct_obj.c
+  DEP netfilter/nfnl.c
+  DEP netfilter/log.c
+  DEP fib_lookup/lookup.c
+  DEP fib_lookup/request.c
+  DEP genl/family.c
+  DEP genl/genl.c
+  DEP genl/mngt.c
+  DEP genl/ctrl.c
+  DEP route/link/vlan.c
+  DEP route/link/api.c
+  DEP route/cls/u32.c
+  DEP route/cls/fw.c
+  DEP route/cls/police.c
+  DEP route/sch/cbq.c
+  DEP route/sch/prio.c
+  DEP route/sch/htb.c
+  DEP route/sch/fifo.c
+  DEP route/sch/blackhole.c
+  DEP route/sch/red.c
+  DEP route/sch/dsmark.c
+  DEP route/sch/sfq.c
+  DEP route/sch/netem.c
+  DEP route/sch/tbf.c
+  DEP route/nexthop.c
+  DEP route/route.c
+  DEP route/class_obj.c
+  DEP route/neigh.c
+  DEP route/tc.c
+  DEP route/addr.c
+  DEP route/rule.c
+  DEP route/route_obj.c
+  DEP route/qdisc.c
+  DEP route/class.c
+  DEP route/cls_api.c
+  DEP route/route_utils.c
+  DEP route/classifier.c
+  DEP route/qdisc_api.c
+  DEP route/neightbl.c
+  DEP route/class_api.c
+  DEP route/link.c
+  DEP route/cls_obj.c
+  DEP route/rtnl.c
+  DEP route/qdisc_obj.c
+  DEP utils.c
+  DEP object.c
+  DEP cache_mngt.c
+  DEP data.c
+  DEP cache.c
+  DEP handlers.c
+  DEP addr.c
+  DEP msg.c
+  DEP cache_mngr.c
+  DEP doc.c
+  DEP nl.c
+  DEP family.c
+  DEP attr.c
+  DEP socket.c
+  MAKE libnl.a
+  CC socket.c
+  CC attr.c
+  CC family.c
+  CC nl.c
+  CC doc.c
+  CC cache_mngr.c
+  CC msg.c
+  CC addr.c
+  CC handlers.c
+  CC cache.c
+  CC data.c
+  CC cache_mngt.c
+  CC object.c
+  CC utils.c
+  CC route/qdisc_obj.c
+  CC route/cls_obj.c
+  CC route/link.c
+  CC route/class_api.c
+  CC route/neightbl.c
+  CC route/qdisc_api.c
+  CC route/route_utils.c
+  CC route/cls_api.c
+  CC route/class.c
+  CC route/rtnl.c
+  CC route/qdisc.c
+  CC route/route_obj.c
+  CC route/rule.c
+  CC route/addr.c
+  CC route/tc.c
+  CC route/neigh.c
+  CC route/class_obj.c
+  CC route/route.c
+  CC route/nexthop.c
+  CC route/classifier.c
+  CC route/sch/netem.c
+  CC route/sch/sfq.c
+  CC route/sch/dsmark.c
+  CC route/sch/red.c
+  CC route/sch/blackhole.c
+  CC route/sch/fifo.c
+  CC route/sch/htb.c
+  CC route/sch/prio.c
+  CC route/sch/tbf.c
+  CC route/sch/cbq.c
+  CC route/cls/police.c
+  CC route/cls/fw.c
+  CC route/cls/u32.c
+  CC route/link/api.c
+  CC route/link/vlan.c
+  CC genl/ctrl.c
+  CC genl/mngt.c
+  CC genl/genl.c
+  CC genl/family.c
+  CC fib_lookup/request.c
+  CC fib_lookup/lookup.c
+  CC netfilter/log.c
+  CC netfilter/nfnl.c
+  CC netfilter/ct_obj.c
+  CC netfilter/log_obj.c
+  CC netfilter/ct.c
+  LD libnl.a
+ar rs libnl.a socket.o attr.o family.o nl.o doc.o cache_mngr.o msg.o addr.o handlers.o cache.o data.o cache_mngt.o object.o utils.o route/qdisc_obj.o route/cls_obj.o route/link.o route/class_api.o route/neightbl.o route/qdisc_api.o route/route_utils.o route/cls_api.o route/class.o route/rtnl.o route/qdisc.o route/route_obj.o route/rule.o route/addr.o route/tc.o route/neigh.o route/class_obj.o route/route.o route/nexthop.o route/classifier.o route/sch/netem.o route/sch/sfq.o route/sch/dsmark.o route/sch/red.o route/sch/blackhole.o route/sch/fifo.o route/sch/htb.o route/sch/prio.o route/sch/tbf.o route/sch/cbq.o route/cls/police.o route/cls/fw.o route/cls/u32.o route/link/api.o route/link/vlan.o genl/ctrl.o genl/mngt.o genl/genl.o genl/family.o fib_lookup/request.o fib_lookup/lookup.o netfilter/log.o netfilter/nfnl.o netfilter/ct_obj.o netfilter/log_obj.o netfilter/ct.o
+ar rs libnl.a socket.o attr.o family.o nl.o doc.o cache_mngr.o msg.o addr.o handlers.o cache.o data.o cache_mngt.o object.o utils.o route/qdisc_obj.o route/cls_obj.o route/link.o route/class_api.o route/neightbl.o route/qdisc_api.o route/route_utils.o route/cls_api.o route/class.o route/rtnl.o route/qdisc.o route/route_obj.o route/rule.o route/addr.o route/tc.o route/neigh.o route/class_obj.o route/route.o route/nexthop.o route/classifier.o route/sch/netem.o route/sch/sfq.o route/sch/dsmark.o route/sch/red.o route/sch/blackhole.o route/sch/fifo.o route/sch/htb.o route/sch/prio.o route/sch/tbf.o route/sch/cbq.o route/cls/police.o route/cls/fw.o route/cls/u32.o route/link/api.o route/link/vlan.o genl/ctrl.o genl/mngt.o genl/genl.o genl/family.o fib_lookup/request.o fib_lookup/lookup.o netfilter/log.o netfilter/nfnl.o netfilter/ct_obj.o netfilter/log_obj.o netfilter/ct.o
+Entering include
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/libnl-1'
+Build athtcmd
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../apps/athtcmd && \
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- CC=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc AR=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ar LD=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ld
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/athtcmd'
+ CC   athtestcmd.o
+ CC   libtcmd.o
+ CC   nl80211.o
+ CC   os.o
+ CC   athtestcmd
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/athtcmd'
+Build rootfs
+Clean wpa_supplicant
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../apps/hostap/wpa_supplicant && make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- clean
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant'
+make -C ../src clean
+make[2]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src'
+for d in ap common crypto drivers eapol_auth eapol_supp eap_common eap_peer eap_server l2_packet p2p radius rsn_supp tls utils wps wfd; do [ -d $d ] && make -C $d clean; done
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/ap'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/ap'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/common'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/common'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/crypto'
+rm -f *~ *.o *.d libcrypto.a
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/crypto'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/drivers'
+rm -f *~ *.o *.d
+rm -f build.wpa_supplicant build.hostapd
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/drivers'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_auth'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_auth'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_supp'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_supp'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_common'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_common'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_peer'
+rm -f *~ *.o *.so *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_peer'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_server'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_server'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/l2_packet'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/l2_packet'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/p2p'
+for d in ; do make -C $d clean; done
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/p2p'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/radius'
+rm -f *~ *.o *.d libradius.a
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/radius'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/rsn_supp'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/rsn_supp'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/tls'
+rm -f *~ *.o *.d libtls.a
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/tls'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/utils'
+rm -f *~ *.o *.d libutils.a
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/utils'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wps'
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wps'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wfd'
+for d in ; do make -C $d clean; done
+rm -f *~ *.o *.d
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wfd'
+rm -f *~
+make[2]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src'
+make -C dbus clean
+make[2]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant/dbus'
+rm -f *~ *.o *.d
+rm -f libwpadbus.a
+make[2]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant/dbus'
+rm -f core *~ *.o *.d eap_*.so wpa_supplicant wpa_cli wpa_passphrase systemd/wpa_supplicant.service systemd/wpa_supplicant@.service systemd/wpa_supplicant-nl80211@.service systemd/wpa_supplicant-wired@.service dbus/fi.epitest.hostap.WPASupplicant.service dbus/fi.w1.wpa_supplicant1.service wpa_supplicant.exe wpa_cli.exe wpa_passphrase.exe win_if_list.exe eapol_test preauth_test
+rm -f wpa_priv
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant'
+Build wpa_supplicant
+cd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../apps/hostap/wpa_supplicant && \
+mkdir -p /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/sbin/systemd /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/sbin/dbus && \
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- CC=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-gcc AR=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ar LD=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc-ld && \
+make ARCH=mips CROSS_COMPILE=/home/maj/Downloads/openwrt_310/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin/mipsel-openwrt-linux-uclibc- DESTDIR=/home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build BINDIR=/sbin LIBDIR=/lib install
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant'
+  CC  config.c
+  CC  notify.c
+  CC  bss.c
+  CC  eap_register.c
+  CC  ../src/utils/common.c
+  CC  ../src/utils/wpa_debug.c
+  CC  ../src/utils/wpabuf.c
+  CC  ../src/utils/os_unix.c
+  CC  ../src/utils/eloop.c
+  CC  config_file.c
+  CC  ../src/rsn_supp/wpa.c
+  CC  ../src/rsn_supp/preauth.c
+  CC  ../src/rsn_supp/pmksa_cache.c
+  CC  ../src/rsn_supp/peerkey.c
+  CC  ../src/rsn_supp/wpa_ie.c
+  CC  ../src/common/wpa_common.c
+  CC  p2p_supplicant.c
+  CC  ../src/p2p/p2p.c
+  CC  ../src/p2p/p2p_utils.c
+  CC  ../src/p2p/p2p_parse.c
+  CC  ../src/p2p/p2p_build.c
+  CC  ../src/p2p/p2p_go_neg.c
+  CC  ../src/p2p/p2p_sd.c
+  CC  ../src/p2p/p2p_pd.c
+  CC  ../src/p2p/p2p_invitation.c
+  CC  ../src/p2p/p2p_dev_disc.c
+  CC  ../src/p2p/p2p_group.c
+  CC  ../src/ap/p2p_hostapd.c
+  CC  wfd_supplicant.c
+  CC  ../src/wfd/wfd.c
+  CC  ../src/wfd/wfd_parse.c
+  CC  ../src/wfd/wfd_build.c
+  CC  ../src/eap_peer/eap_tls.c
+  CC  ../src/eap_peer/eap_peap.c
+  CC  ../src/eap_common/eap_peap_common.c
+  CC  ../src/eap_peer/eap_ttls.c
+  CC  ../src/eap_peer/eap_md5.c
+  CC  ../src/eap_peer/eap_mschapv2.c
+  CC  ../src/eap_peer/mschapv2.c
+  CC  ../src/eap_peer/eap_gtc.c
+  CC  ../src/eap_peer/eap_otp.c
+  CC  ../src/eap_peer/eap_sim.c
+  CC  ../src/eap_peer/eap_leap.c
+  CC  ../src/eap_common/eap_sim_common.c
+  CC  ../src/eap_peer/eap_fast.c
+  CC  ../src/eap_peer/eap_fast_pac.c
+  CC  ../src/eap_common/eap_fast_common.c
+  CC  wps_supplicant.c
+  CC  ../src/utils/uuid.c
+  CC  ../src/eap_peer/eap_wsc.c
+  CC  ../src/eap_common/eap_wsc_common.c
+  CC  ../src/wps/wps.c
+  CC  ../src/wps/wps_common.c
+  CC  ../src/wps/wps_attr_parse.c
+  CC  ../src/wps/wps_attr_build.c
+  CC  ../src/wps/wps_attr_process.c
+  CC  ../src/wps/wps_dev_attr.c
+  CC  ../src/wps/wps_enrollee.c
+  CC  ../src/wps/wps_registrar.c
+  CC  ../src/eapol_supp/eapol_supp_sm.c
+  CC  ../src/eap_peer/eap.c
+  CC  ../src/eap_peer/eap_methods.c
+  CC  ap.c
+  CC  ../src/ap/hostapd.c
+  CC  ../src/ap/wpa_auth_glue.c
+  CC  ../src/ap/utils.c
+  CC  ../src/ap/authsrv.c
+  CC  ../src/ap/ap_config.c
+  CC  ../src/utils/ip_addr.c
+  CC  ../src/ap/sta_info.c
+  CC  ../src/ap/tkip_countermeasures.c
+  CC  ../src/ap/ap_mlme.c
+  CC  ../src/ap/ieee802_1x.c
+  CC  ../src/eapol_auth/eapol_auth_sm.c
+  CC  ../src/ap/ieee802_11_auth.c
+  CC  ../src/ap/ieee802_11_shared.c
+  CC  ../src/ap/drv_callbacks.c
+  CC  ../src/ap/ap_drv_ops.c
+  CC  ../src/ap/beacon.c
+  CC  ../src/ap/ieee802_11_ht.c
+  CC  ../src/ap/ctrl_iface_ap.c
+  CC  ../src/eap_server/eap_server.c
+  CC  ../src/eap_server/eap_server_identity.c
+  CC  ../src/eap_server/eap_server_methods.c
+  CC  ../src/ap/wmm.c
+  CC  ../src/ap/ap_list.c
+  CC  ../src/ap/ieee802_11.c
+  CC  ../src/ap/hw_features.c
+  CC  ../src/ap/wps_hostapd.c
+  CC  ../src/eap_server/eap_server_wsc.c
+  CC  ../src/ap/wpa_auth.c
+  CC  ../src/ap/wpa_auth_ie.c
+  CC  ../src/ap/pmksa_cache_auth.c
+  CC  ../src/ap/peerkey_auth.c
+  CC  ../src/crypto/ms_funcs.c
+  CC  ../src/eap_common/chap.c
+  CC  ../src/eap_peer/eap_tls_common.c
+  CC  ../src/crypto/crypto_internal-rsa.c
+  CC  ../src/crypto/tls_internal.c
+  CC  ../src/tls/tlsv1_common.c
+  CC  ../src/tls/tlsv1_record.c
+  CC  ../src/tls/tlsv1_cred.c
+  CC  ../src/tls/tlsv1_client.c
+  CC  ../src/tls/tlsv1_client_write.c
+  CC  ../src/tls/tlsv1_client_read.c
+  CC  ../src/tls/asn1.c
+  CC  ../src/tls/rsa.c
+  CC  ../src/tls/x509v3.c
+  CC  ../src/tls/pkcs1.c
+  CC  ../src/tls/pkcs5.c
+  CC  ../src/tls/pkcs8.c
+  CC  ../src/crypto/crypto_internal-cipher.c
+  CC  ../src/crypto/crypto_internal-modexp.c
+  CC  ../src/tls/bignum.c
+  CC  ../src/crypto/crypto_internal.c
+  CC  ../src/crypto/aes-internal.c
+  CC  ../src/crypto/aes-internal-dec.c
+  CC  ../src/crypto/aes-unwrap.c
+  CC  ../src/crypto/aes-wrap.c
+  CC  ../src/crypto/aes-cbc.c
+  CC  ../src/crypto/aes-internal-enc.c
+  CC  ../src/crypto/md5.c
+  CC  ../src/crypto/md5-internal.c
+  CC  ../src/crypto/md4-internal.c
+  CC  ../src/crypto/rc4.c
+  CC  ../src/crypto/sha256.c
+  CC  ../src/crypto/sha256-internal.c
+  CC  ../src/crypto/dh_groups.c
+  CC  ../src/crypto/dh_group5.c
+  CC  ../src/crypto/random.c
+  CC  ctrl_iface.c
+  CC  ctrl_iface_unix.c
+  CC  ../src/utils/base64.c
+  CC  sme.c
+  CC  ../src/common/ieee802_11_common.c
+  CC  ../src/eap_common/eap_common.c
+  CC  ../src/crypto/sha1.c
+  CC  ../src/crypto/sha1-internal.c
+  CC  ../src/crypto/fips_prf_internal.c
+  CC  ../src/crypto/sha1-pbkdf2.c
+  CC  ../src/crypto/sha1-tprf.c
+  CC  ../src/crypto/sha1-tlsprf.c
+  CC  ../src/crypto/des-internal.c
+  CC  ../src/common/gas.c
+  CC  gas_query.c
+  CC  offchannel.c
+  CC  ../src/drivers/driver_common.c
+  CC  wpa_supplicant.c
+  CC  events.c
+  CC  blacklist.c
+  CC  wpas_glue.c
+  CC  scan.c
+  CC  main.c
+  CC  ../src/drivers/driver_nl80211.c
+  CC  ../src/utils/radiotap.c
+  CC  ../src/drivers/netlink.c
+  CC  ../src/drivers/linux_ioctl.c
+  CC  ../src/drivers/rfkill.c
+  CC  ../src/drivers/drivers.c
+  CC  ../src/l2_packet/l2_packet_linux.c
+  LD  wpa_supplicant
+  CC  wpa_cli.c
+  CC  ../src/common/wpa_ctrl.c
+  CC  ../src/utils/edit.c
+  LD  wpa_cli
+  CC  wpa_passphrase.c
+  LD  wpa_passphrase
+sed -e 's|\@BINDIR\@|/usr/local/sbin/|g' systemd/wpa_supplicant.service.in >systemd/wpa_supplicant.service
+sed -e 's|\@BINDIR\@|/usr/local/sbin/|g' systemd/wpa_supplicant.service.arg.in >systemd/wpa_supplicant@.service
+sed -e 's|\@BINDIR\@|/usr/local/sbin/|g' systemd/wpa_supplicant-nl80211.service.arg.in >systemd/wpa_supplicant-nl80211@.service
+sed -e 's|\@BINDIR\@|/usr/local/sbin/|g' systemd/wpa_supplicant-wired.service.arg.in >systemd/wpa_supplicant-wired@.service
+sed -e 's|\@BINDIR\@|/usr/local/sbin/|g' dbus/fi.epitest.hostap.WPASupplicant.service.in >dbus/fi.epitest.hostap.WPASupplicant.service
+sed -e 's|\@BINDIR\@|/usr/local/sbin/|g' dbus/fi.w1.wpa_supplicant1.service.in >dbus/fi.w1.wpa_supplicant1.service
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant'
+make[1]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant'
+install -D wpa_supplicant /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/sbin/wpa_supplicant
+install -D wpa_cli /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/sbin/wpa_cli
+install -D wpa_passphrase /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/sbin/wpa_passphrase
+make -C ../src install
+make[2]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src'
+for d in ap common crypto drivers eapol_auth eapol_supp eap_common eap_peer eap_server l2_packet p2p radius rsn_supp tls utils wps wfd; do [ -d $d ] && make -C $d install; done
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/ap'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/ap'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/common'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/common'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/crypto'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/crypto'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/drivers'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/drivers'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_auth'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_auth'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_supp'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eapol_supp'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_common'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_common'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_peer'
+if ls *.so >/dev/null 2>&1; then \
+	install -d /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/lib/wpa_supplicant && \
+	cp *.so /home/maj/Downloads/WLAN-AIO-3.10kernel/build/../rootfs-mips.build/lib/wpa_supplicant \
+; fi
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_peer'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_server'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/eap_server'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/l2_packet'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/l2_packet'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/p2p'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/p2p'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/radius'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/radius'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/rsn_supp'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/rsn_supp'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/tls'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/tls'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/utils'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/utils'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wps'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wps'
+make[3]: Entering directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wfd'
+Nothing to be made.
+make[3]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src/wfd'
+make[2]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/src'
+make[1]: Leaving directory '/home/maj/Downloads/WLAN-AIO-3.10kernel/apps/hostap/wpa_supplicant'
