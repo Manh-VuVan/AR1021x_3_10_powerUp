@@ -1355,6 +1355,23 @@ int ath6kl_wmi_set_roam_5g_bias_cmd(struct wmi *wmi, u8 bias_5g)
 				   NO_SYNC_WMIFLAG);
 }
 
+void rateset(struct ath6kl_vif *vif)
+{
+	struct ath6kl *ar = vif->ar;
+	u32 maskl = 0;
+	u32 maskh = 0;
+
+    //maskl = (u32)(ATH6KL_HTCOEX_RATEMASK_HT20 & 0xffffffff);
+    //maskh = (u32)((ATH6KL_HTCOEX_RATEMASK_HT20 >> 32) & 0xffffffff);
+    
+    maskl = 0x1f;  // 11a 6 Mbps 
+//    maskl = 0x1fff;  // mcs0 6.5Mbps
+    maskh = 0;
+    
+	ath6kl_wmi_set_fix_rates_ex(ar->wmi, vif->fw_vif_idx, maskl, maskh);
+}
+
+
 static int ath6kl_wmi_connect_event_rx(struct wmi *wmi, u8 *datap, int len,
 				       struct ath6kl_vif *vif)
 {
@@ -1431,6 +1448,7 @@ static int ath6kl_wmi_connect_event_rx(struct wmi *wmi, u8 *datap, int len,
 				ath6kl_ap_admc_assoc_req_release(vif,
 								assoc_req);
 			}
+		  rateset(vif);
 		}
 
 		ath6kl_ap_ht_update_ies(vif);
@@ -5409,6 +5427,24 @@ int ath6kl_wmi_set_fix_rates(struct wmi *wmi, u8 if_idx, u64 mask)
 
 	return ath6kl_wmi_cmd_send(wmi, if_idx, skb, WMI_SET_FIXRATES_CMDID,
 				NO_SYNC_WMIFLAG);
+}
+
+int ath6kl_wmi_set_fix_rates_ex(struct wmi *wmi, u8 if_idx, u32 maskl, u32 maskh)
+{
+	struct sk_buff *skb;
+	struct wmi_set_fix_rates_cmd *cmd;
+
+	skb = ath6kl_wmi_get_new_buf(sizeof(*cmd));
+	if (!skb)
+		return -ENOMEM;
+
+	cmd = (struct wmi_set_fix_rates_cmd *)skb->data;
+	cmd->fixRateMask[0] = (u32)(maskl & 0xffffffff);
+	cmd->fixRateMask[1] = (u32)(maskh & 0xffffffff);
+    
+ 	ath6kl_dbg(ATH6KL_DBG_WMI, "set_fix_rate: 0x%08x 0x%08x\n",
+ 			cmd->fixRateMask[0], cmd->fixRateMask[1]);
+	return ath6kl_wmi_cmd_send(wmi, if_idx, skb, WMI_SET_FIXRATES_CMDID, NO_SYNC_WMIFLAG);
 }
 
 int ath6kl_wmi_add_port_cmd(struct wmi *wmi,  struct ath6kl_vif *vif,

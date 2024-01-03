@@ -3616,7 +3616,7 @@ int ath6kl_wmi_get_rsn_cap(struct wmi *wmi, u8 if_idx);
 int ath6kl_wmi_get_pmkid_list(struct wmi *wmi, u8 if_idx);
 
 int ath6kl_wmi_set_fix_rates(struct wmi *wmi, u8 if_idx, u64 mask);
-
+int ath6kl_wmi_set_fix_rates_ex(struct wmi *wmi, u8 if_idx, u32 maskl, u32 maskh);
 int ath6kl_wmi_add_port_cmd(struct wmi *wmi, struct ath6kl_vif *vif,
 	u8 opmode, u8 subopmode);
 int ath6kl_wmi_del_port_cmd(struct wmi *wmi, u8 if_idx, u8 port_id);
